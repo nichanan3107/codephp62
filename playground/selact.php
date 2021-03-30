@@ -1,20 +1,6 @@
 <?php
-    $dbhost = 'localhost';
-    $dbuser = 'root';
-    $dbpass = '';
+require_once 'connectdb.php';
 
-    $dbname = 'codephp62';
-
-    $myconn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-    if ($myconn->connect_errno) {
-        printf("Connect failed: %s\n", $myconn->connect_error);
-        exit();
-    }
-    // else
-    
-        // echo 'success'; 
-        // echo "<br>";
-        // echo 'after connect database';
     $strSQL = "SELECT  id, username, status FROM user";
     $result = $myconn->query($strSQL);
      
