@@ -13,6 +13,8 @@ require_once 'connectdb.php';
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+       <title>Document</title>
     </head>
     <body>
 
@@ -21,6 +23,8 @@ require_once 'connectdb.php';
               <td> ID User</td>
               <td> ชื่อผู้ใช้</td>
               <td> สถานะ</td>
+              <td> แก้ไข</td>
+              <td> ลบ</td>
           </tr>
     <?php
      while ($row = $result->fetch_array()) {
@@ -31,6 +35,8 @@ require_once 'connectdb.php';
              <td> <?php echo $row["id"]?></td>
              <td> <?php echo $row["username"] ?></td>
              <td> <?php echo $row["status"]?></td>
+             <td><a href="update.php?id=<?php echo $row["id"]; ?>&username=<?php echo $row["username"]; ?>&status=<?php echo $row["status"]; ?>"><i class="fas fa-pen"></i></a></td>
+            <td><a href="delete.php?id=<?php echo $row["id"]; ?>"><i class="fas fa-trash"></i></a></td>
          </tr>
          <?php
     }
